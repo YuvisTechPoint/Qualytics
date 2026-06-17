@@ -1,4 +1,6 @@
 {
+  "buildCommand": "npm run build",
+  "installCommand": "npm install --loglevel=error --no-fund",
   "build": {
     "env": {
       "NEXT_TELEMETRY_DISABLED": "1"

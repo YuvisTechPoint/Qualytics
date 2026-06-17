@@ -5,11 +5,9 @@ import { Pool } from "pg";
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };
 
 function createPrismaClient() {
-  const connectionString = process.env.DATABASE_URL;
-
-  if (!connectionString) {
-    return new PrismaClient();
-  }
+  const connectionString =
+    process.env.DATABASE_URL ??
+    "postgresql://postgres:postgres@127.0.0.1:5432/postgres";
 
   const pool = new Pool({ connectionString });
   const adapter = new PrismaPg(pool);
