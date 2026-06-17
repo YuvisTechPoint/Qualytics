@@ -66,6 +66,9 @@
     "zod": "^4.4.3",
     "zustand": "^5.0.14"
   },
+  "overrides": {
+    "rimraf": "^5.0.10"
+  },
   "devDependencies": {
     "@types/node": "^20",
     "@types/pg": "^8.20.0",

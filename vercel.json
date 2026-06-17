@@ -1,9 +1,12 @@
 {
   "buildCommand": "npm run build",
-  "installCommand": "npm install --loglevel=error --no-fund",
+  "installCommand": "npm install --legacy-peer-deps --loglevel=silent --no-fund --no-audit",
   "build": {
     "env": {
-      "NEXT_TELEMETRY_DISABLED": "1"
+      "NEXT_TELEMETRY_DISABLED": "1",
+      "NPM_CONFIG_LOGLEVEL": "silent",
+      "NPM_CONFIG_FUND": "false",
+      "NPM_CONFIG_AUDIT": "false"
     }
   }
 }
