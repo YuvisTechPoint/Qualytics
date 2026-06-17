@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Qualytics.ai Clone
+
+Production-grade marketing website clone of [qualytics.ai](https://qualytics.ai/) with dark enterprise UI, 3D data visualizations, scroll animations, and full-stack backend.
+
+## Stack
+
+- **Next.js 14** (App Router) + TypeScript + Tailwind CSS
+- **Framer Motion** — scroll reveals, tab transitions, CountUp stats
+- **Three.js / React Three Fiber** — DataFlowNetwork, ParticleField, ControlLayerMesh, DataGlobe
+- **D3.js** — CircularProgress rings, AnomalyTimeline spark-lines
+- **Prisma 7** + PostgreSQL — forms, integrations catalog
+- **Sanity CMS** — content architecture (static fallback included)
+- **React Hook Form** + Zod — validated forms with honeypot
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+cd qualytics-clone
+cp .env.example .env
+npm install --legacy-peer-deps
+npx prisma generate
+npx prisma db push   # requires PostgreSQL
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Visual dev playground: [http://localhost:3000/dev/visuals](http://localhost:3000/dev/visuals)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Pages
 
-## Learn More
+| Route | Description |
+|-------|-------------|
+| `/` | Homepage with 8 sections, 3D hero, tab demo |
+| `/augmented-data-quality` | Platform page |
+| `/built-for-humans-and-ai` | Platform page |
+| `/trusted-context-at-use` | Platform page |
+| `/why-qualytics` | Industry tabs + CircularProgress |
+| `/integrations` | Filterable integration grid |
+| `/customer-love` | Testimonial grid |
+| `/about-us`, `/careers`, `/contact` | Company pages |
+| `/demo`, `/free-trial` | Conversion forms |
+| `/resources/*` | Blog, guides, webinars, stories, inline articles |
+| `/tos`, `/privacy` | Legal pages |
 
-To learn more about Next.js, take a look at the following resources:
+## API Routes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `POST /api/demo` — Demo request
+- `POST /api/trial` — Free trial signup
+- `POST /api/contact` — Contact form
+- `POST /api/newsletter` — Newsletter subscription
+- `GET /api/search?q=` — Content search
+- `POST /api/revalidate` — Sanity ISR webhook
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Visual Features
 
-## Deploy on Vercel
+- Dark palette: `#09090F` bg, `#FF6B35` CTAs, `#0E8DD6` accents
+- Syne display + Inter body typography
+- 3D scenes desktop-only with `prefers-reduced-motion` support
+- Animated Control Gap SVG diagram
+- Logo marquee with infinite scroll
+- Framer Motion scroll reveals throughout
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm start
+```
+
+## Deploy
+
+Configure environment variables from `.env.example` on Vercel. Connect Supabase for PostgreSQL and Sanity for CMS content.

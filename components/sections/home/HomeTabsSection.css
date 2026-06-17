@@ -1,0 +1,301 @@
+/* Matches qualytics.ai home-tabs Webflow styles */
+
+.home-tabs_layout {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.home-tabs_col {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.home-tabs_visuals-list {
+  position: relative;
+  height: 40rem;
+  overflow: hidden;
+}
+
+.home-tabs_visual-item {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.home-tabs_visual-item.active {
+  visibility: visible;
+}
+
+.home-tabs_visual-inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.home-tabs_card {
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 52%;
+  max-height: 36.75rem;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.home-tabs_card h3 {
+  max-width: 25ch;
+  margin: 0;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.home-tabs_card .home-tabs_body {
+  max-width: 50ch;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #7f7e7d;
+}
+
+.home-tabs_card .home-tabs_body p {
+  margin: 0;
+}
+
+.home-tabs_card .home-tabs_body p + p {
+  margin-top: 1rem;
+}
+
+.home-tabs_read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.home-tabs_read-more:hover {
+  color: #ff9933;
+}
+
+.home-tabs_read-more svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.home-tabs_read-more:hover svg {
+  transform: translateX(2px);
+}
+
+.home-tabs_image {
+  position: relative;
+  flex: 0 auto;
+  width: 100%;
+  max-width: 48%;
+  height: 100%;
+  border-left: 1px dashed #e3e0dd;
+  background-color: #f5f2ef;
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+
+.home-tabs_links-list {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-flow: row;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 52%;
+}
+
+.home-tabs_link {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000000;
+  background-image: linear-gradient(
+    45deg,
+    #000000,
+    #3a1000 10%,
+    #631b01 25%,
+    #b83201 40%,
+    #ff672b 55%,
+    #ff9933 70%,
+    #ffc183 80%,
+    #ffffff 95%
+  );
+  transition: color 0.3s, background-color 0.3s, opacity 0.3s;
+}
+
+.home-tabs_link-content {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1.5rem 1.875rem;
+  border-top: 1px dashed #e3e0dd;
+  border-left: 1px dashed #e3e0dd;
+  background-color: #ffffff;
+  transition: background-color 0.3s;
+}
+
+.home-tabs_link:first-child .home-tabs_link-content {
+  border-left: none;
+}
+
+.home-tabs_link:hover .home-tabs_link-content {
+  background-color: #e3e0dd;
+}
+
+.home-tabs_link.active {
+  color: #ffffff;
+}
+
+.home-tabs_link.active .home-tabs_link-content {
+  background-color: transparent;
+  border: none;
+}
+
+.home-tabs_link.active:hover .home-tabs_link-content {
+  background-color: transparent;
+}
+
+.home-tabs_link-heading {
+  margin: 0;
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tab-content__item-bottom.is-home-tabs {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+}
+
+.tab-progress.is-home-tabs {
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: 0% 50%;
+  transform-style: preserve-3d;
+  background-color: #ff9933;
+}
+
+@media (max-width: 991px) {
+  .home-tabs_links-list {
+    top: 21.4rem;
+    bottom: auto;
+    width: 100%;
+    border-bottom: 1px dashed #e3e0dd;
+  }
+
+  .home-tabs_visuals-list {
+    height: auto;
+    aspect-ratio: 834 / 1100;
+  }
+
+  .home-tabs_visual-item {
+    overflow: hidden;
+  }
+
+  .home-tabs_visual-inner {
+    flex-flow: column;
+  }
+
+  .home-tabs_card {
+    flex: none;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 100%;
+    height: 25rem;
+    max-height: none;
+    padding-top: 3.75rem;
+  }
+
+  .home-tabs_image {
+    flex: 1;
+    max-width: 100%;
+    border-left: none;
+    overflow: hidden;
+  }
+
+  .home-tabs_link-content {
+    padding-top: 1.125rem;
+    padding-bottom: 1.125rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-tabs_links-list {
+    top: 22.75rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+    width: 100%;
+    max-width: none;
+  }
+
+  .home-tabs_visuals-list {
+    aspect-ratio: 390 / 860;
+  }
+
+  .home-tabs_visual-item {
+    border-radius: 0.25em;
+  }
+
+  .home-tabs_visual-inner {
+    border-radius: 0.25em;
+    padding: 0;
+  }
+
+  .home-tabs_card {
+    height: 30rem;
+    padding: 2.75rem 0.875rem 0;
+  }
+
+  .home-tabs_link-content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .home-tabs_link-heading {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+}

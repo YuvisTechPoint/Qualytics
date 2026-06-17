@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>http://localhost:3000/customer-love</loc><lastmod>2026-06-17T22:13:09.757Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/privacy</loc><lastmod>2026-06-17T22:13:09.757Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/free-trial</loc><lastmod>2026-06-17T22:13:09.757Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources/blog</loc><lastmod>2026-06-17T22:13:09.757Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources/blog/ai-readiness-data-governance</loc><lastmod>2026-06-17T22:13:09.758Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/demo</loc><lastmod>2026-06-17T22:13:09.757Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources/company-news</loc><lastmod>2026-06-17T22:13:09.757Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources/customer-stories</loc><lastmod>2026-06-17T22:13:09.757Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources/guides</loc><lastmod>2026-06-17T22:13:09.757Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/contact</loc><lastmod>2026-06-17T22:13:09.757Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources/in/data-control-layer-for-trusted-context</loc><lastmod>2026-06-17T22:13:09.758Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources/in/data-control-layer-to-govern-context-for-ai-systems</loc><lastmod>2026-06-17T22:13:09.758Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources/in/data-quality-vs-data-control</loc><lastmod>2026-06-17T22:13:09.758Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources/in/trusted-ai-and-analytics-at-scale-with-databricks-and-qualytics</loc><lastmod>2026-06-17T22:13:09.758Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources/in/vibecode-data-quality</loc><lastmod>2026-06-17T22:13:09.758Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources/reports</loc><lastmod>2026-06-17T22:13:09.757Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources/guides/getting-started-augmented-dq</loc><lastmod>2026-06-17T22:13:09.758Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources/guides/state-of-data-quality-2026</loc><lastmod>2026-06-17T22:13:09.758Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources</loc><lastmod>2026-06-17T22:13:09.757Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources/product-news</loc><lastmod>2026-06-17T22:13:09.757Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/tos</loc><lastmod>2026-06-17T22:13:09.757Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000</loc><lastmod>2026-06-17T22:13:09.757Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources/webinars-and-events/augmented-dq-webinar</loc><lastmod>2026-06-17T22:13:09.758Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources/webinars-and-events/data-control-layer-webinar</loc><lastmod>2026-06-17T22:13:09.758Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources/webinars-and-events</loc><lastmod>2026-06-17T22:13:09.757Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/why-qualytics</loc><lastmod>2026-06-17T22:13:09.758Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/about-us</loc><lastmod>2026-06-17T22:13:09.758Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/trusted-context-at-use</loc><lastmod>2026-06-17T22:13:09.758Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/resources/customer-stories/brookfield-customer-story</loc><lastmod>2026-06-17T22:13:09.758Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/augmented-data-quality</loc><lastmod>2026-06-17T22:13:09.758Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/built-for-humans-and-ai</loc><lastmod>2026-06-17T22:13:09.758Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/careers</loc><lastmod>2026-06-17T22:13:09.758Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/integrations</loc><lastmod>2026-06-17T22:13:09.758Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+</urlset>

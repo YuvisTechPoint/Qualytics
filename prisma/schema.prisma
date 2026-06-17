@@ -1,0 +1,201 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ADMIN
+  EDITOR
+}
+
+enum CompanySize {
+  UNDER_500
+  SIZE_500_2000
+  SIZE_2000_10000
+  OVER_10000
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  DEMO_SCHEDULED
+  CONVERTED
+  LOST
+}
+
+enum ContentType {
+  BLOG_POST
+  GUIDE
+  WEBINAR
+  CUSTOMER_STORY
+  COMPANY_NEWS
+  PRODUCT_NEWS
+  INLINE_ARTICLE
+}
+
+enum IntegCategory {
+  DATA_WAREHOUSE
+  EVENT_STREAMING
+  OBJECT_STORAGE
+  DATA_CATALOG
+  ALERTING
+  ETL_ORCHESTRATION
+  TICKETING
+  ANALYTICS
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  role          Role      @default(EDITOR)
+  accounts      Account[]
+  sessions      Session[]
+  createdAt     DateTime  @default(now())
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  id_token          String? @db.Text
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model DemoRequest {
+  id          String       @id @default(cuid())
+  firstName   String
+  lastName    String
+  email       String
+  company     String
+  jobTitle    String
+  phone       String?
+  challenge   String?      @db.Text
+  companySize CompanySize?
+  source      String?
+  ipAddress   String?
+  userAgent   String?
+  utmSource   String?
+  utmMedium   String?
+  utmCampaign String?
+  status      LeadStatus   @default(NEW)
+  notes       String?      @db.Text
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model TrialRequest {
+  id        String   @id @default(cuid())
+  email     String
+  name      String
+  company   String
+  status    String   @default("pending")
+  createdAt DateTime @default(now())
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  firstName String
+  lastName  String
+  email     String
+  company   String?
+  jobTitle  String?
+  message   String   @db.Text
+  ipAddress String?
+  createdAt DateTime @default(now())
+}
+
+model NewsletterSubscriber {
+  id             String    @id @default(cuid())
+  email          String    @unique
+  firstName      String?
+  source         String?
+  isActive       Boolean   @default(true)
+  confirmedAt    DateTime?
+  unsubscribedAt DateTime?
+  createdAt      DateTime  @default(now())
+}
+
+model ContentItem {
+  id          String      @id @default(cuid())
+  sanityId    String      @unique
+  type        ContentType
+  title       String
+  slug        String
+  category    String?
+  published   Boolean     @default(false)
+  publishedAt DateTime?
+  viewCount   Int         @default(0)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Integration {
+  id       String        @id @default(cuid())
+  name     String
+  slug     String        @unique
+  category IntegCategory
+  logoUrl  String?
+  docUrl   String?
+  featured Boolean       @default(false)
+  order    Int           @default(0)
+  createdAt DateTime     @default(now())
+}
+
+model JobPosting {
+  id           String    @id @default(cuid())
+  title        String
+  department   String
+  location     String
+  type         String
+  remote       Boolean   @default(true)
+  description  String    @db.Text
+  requirements String[]
+  applyUrl     String
+  isActive     Boolean   @default(true)
+  publishedAt  DateTime  @default(now())
+  closingDate  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model PageView {
+  id        String   @id @default(cuid())
+  path      String
+  referer   String?
+  country   String?
+  device    String?
+  createdAt DateTime @default(now())
+
+  @@index([path])
+  @@index([createdAt])
+}
